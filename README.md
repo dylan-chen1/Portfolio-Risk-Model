@@ -6,7 +6,9 @@ The CVaR is also recorded for each exception day, and the entire window's CVaR i
 
 ## Findings
 Final Results using a t-distribution:
-2008 Financial Crisis: 
+| Window | Exceptions | Total Days | Rate | Target | Average Real Losses | CVaR |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2008 Financial Crisis | 2 | 146 | 1.4% | 1% | 3.3% | 3.2% | 
 
 ## Why GARCH
 Using a GARCH model, we are able to get a portfolio volatility estimate for each day. The volatility is calculated each day using a recursive GARCH formula, taking into account the real portfolio change in the last day along with yesterday's volatility estimate. 
