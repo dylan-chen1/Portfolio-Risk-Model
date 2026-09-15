@@ -26,7 +26,7 @@ backtest, than a flat historical-vol assumption.
 - `src/monte_carlo.py` — Monte Carlo simulation + VaR/CVaR (next)
 - `src/backtest.py` — crash-window backtest, exception counting (next)
 
-## Default portfolio (change these tickers/weights anytime)
+## Portfolio 
 | Ticker | Weight | Role |
 |---|---|---|
 | SPY | 40% | US equity |
