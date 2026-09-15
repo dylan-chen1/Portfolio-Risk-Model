@@ -1,10 +1,15 @@
 # Portfolio Risk Model — Monte Carlo VaR
+Portfolio Risk Model, tracking how much one might lose in the event of economic crisis. Using a GARCH model, we are able to get a portfolio volatility estimate for each day. The volatility is calculated each day using a recursive GARCH formula, taking into account the real portfolio change in the last day along with yesterday's volatility estimate. 
+I tested the model against the 2008 financial crisis, 2020 covid crash, and 2022 bear market, running a Monte Carlo Simulation of 10,000 trials per trading day, with each day factoring the volatility estimate of the day into the distribution. The VaR (value at risk) is calculated for each day by finding the cutoff of the largest 1% of losses among the 10,000 trials. The CVaR (conditional value at risk) is calculated for each day by finding the average loss among the largest 1% of losses, showing how much of a loss you can expect in the case of a major market drop.
+Once we have the VaR and CVaR for every trading day in the time window being observed, we check the real portfolio return that happened for each day. If the actual loss exceeds the predicted VaR for the day, that counts as an exception which is recorded. The goal is for the model to predict VaR's accurate enough to where exceptions happen 1% of the time per time window.
+The CVaR is also recorded for each exception day, and the entire window's CVaR is calculated through averaging all the CVaR's from the window. We then find the real portfolio losses that happened for each exception day, averaging all the actual losses from exception days from the window. The average CVaR is compared against the actual average loss. The goal is for the CVaR to be as close as possible to the real average losses.
 
-Value at Risk for a hypothetical portfolio, estimated via Monte Carlo
-simulation on top of GARCH(1,1) volatility, backtested against the 2008
-financial crisis and the 2020 COVID crash.
+## Findings
+Final Results using a t-distribution:
+2008 Financial Crisis: 
 
 ## Why GARCH
+Using a GARCH model, we are able to get a portfolio volatility estimate for each day. The volatility is calculated each day using a recursive GARCH formula, taking into account the real portfolio change in the last day along with yesterday's volatility estimate. 
 Rolling historical volatility treats every period the same. GARCH(1,1)
 lets today's volatility depend on recent shocks — "volatility
 clustering" — which is exactly the pattern real crashes show. That
