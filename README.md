@@ -6,7 +6,7 @@ I tested the model against the 2008 financial crisis, 2020 covid crash, and 2022
 Once we have the VaR and CVaR for every trading day in the time window being observed, we check the real portfolio return that happened for  each day. If the actual loss exceeds the predicted VaR for the day, that counts as an exception which is recorded, along with that day's CVaR. The goal is for the model to predict VaRs accurate enough to where exceptions happen 1% of the time per time window, and the CVaR is as close as possible to the actual average losses that occurred.
 
 
-## Findings
+## Findings and Process
 Final Results using a t-distribution at 99% VaR:
 | Window | Exceptions | Total Days | Rate | Target | Average Real Losses | CVaR |
 | --- | --- | --- | --- | --- | --- | --- |
