@@ -19,7 +19,7 @@ CACHE_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
 
 def load_price_data(tickers: Iterable[str], start: str,
-    end: str, cache: bool = True,) returns pd.DataFrame:
+    end: str, cache: bool = True,) -> pd.DataFrame:
     """
     Download adjusted close prices for `tickers` between `start` and `end`
     (YYYY-MM-DD strings). Caches each ticker to a CSV under data/raw/ so
