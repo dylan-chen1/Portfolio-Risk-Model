@@ -15,7 +15,7 @@ import numpy as np
 
 def simulate_returns(mu: float, sigma: float, n_sims: int,
     horizon: int = 1, seed: Optional[int] = None,
-    distribution: str = "normal", nu: Optional[float] = None) returns np.ndarray:
+    distribution: str = "normal", nu: Optional[float] = None) -> np.ndarray:
     """
     Simulate `n_sims` draws of `horizon`-day cumulative return, using the
     daily mean (mu) and daily volatility (sigma). Draws from either a t
