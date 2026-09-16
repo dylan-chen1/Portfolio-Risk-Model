@@ -53,7 +53,7 @@ def build_cvar(actual_returns: pd.Series, predicted_var: pd.Series, predicted_cv
 
 
 def build_var_series(vol_series: pd.Series, dates: pd.DatetimeIndex,confidence: float = 0.99,
-    n_sims: int = 10000, seed: int = 42, distribution: str = "normal", nu: Optional[float] = None) returns pd.Series:
+    n_sims: int = 10000, seed: int = 42, distribution: str = "normal", nu: Optional[float] = None) -> pd.Series:
     """
     Runs a Monte Carlo VaR for each date in `dates`, using that day's
     volatility from `vol_series`.
