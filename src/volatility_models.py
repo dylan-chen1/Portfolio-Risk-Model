@@ -3,9 +3,10 @@ volatility_models.py
 
 Two ways to estimate the volatility that feeds the Monte Carlo VaR:
 
-1. rolling_historical_vol — simple, backward-looking rolling std. Limitation is
-   that it  treats every period as equally volatile and each year is a cutoff
-2. fit_garch — GARCH(1,1). Lets today's volatility depend on recent
+1. rolling_historical_vol: simple, backward-looking rolling std. Limitation is
+   that it  treats every period as equally volatile and each year is a cutoff.
+   It is a 252 day window that gets shifted over day by day
+2. fit_garch GARCH(1,1): Lets today's volatility depend on recent
    shocks. It is more accurate to the behavior real
    crashes show
 """
